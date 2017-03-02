@@ -6,16 +6,18 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <TextView
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:text="This is title"
-            android:gravity="center"
-            android:textColor="@android:color/white"
+            android:layout_height="?attr/actionBarSize"
             android:background="@android:color/holo_blue_dark"
+            app:title="ToolBar Title"
+            app:titleTextColor="@android:color/white"
             app:layout_scrollFlags="scroll|enterAlways"/>
 
         <android.support.design.widget.TabLayout
@@ -35,4 +37,14 @@
         android:layout_height="match_parent"
         android:background="@android:color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_menus"
+        app:layout_behavior="cn.ittiger.stickynavigation.behavior.BottomNavigationViewBehavior"
+        />
 </android.support.design.widget.CoordinatorLayout>
